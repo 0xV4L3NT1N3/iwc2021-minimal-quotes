@@ -9,7 +9,7 @@ class QuoteAPI {
   String author = '';
 
   Future<void> getData () async {
-    Response response = await get(Uri.parse('https://api.quotable.io/random'));
+    Response response = await get(Uri.parse('https://api.quotable.io/random?maxLength=160'));
     Map data = jsonDecode(response.body);
 
     content = data['content'];
