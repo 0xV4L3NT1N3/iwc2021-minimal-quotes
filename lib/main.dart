@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'services/quote_api.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +14,29 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  // variables holding quote and author data, set to loading... at first
+
+  String quote = 'loading ...';
+  String author = 'loading ...';
+
+  // get quote API data, store the data above
+
+  void getQuote () async {
+    QuoteAPI newQuote = QuoteAPI();
+    await newQuote.getData();
+    setState(() {
+      quote = newQuote.content;
+      author = newQuote.author;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getQuote();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,15 +55,19 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('design is thinking made visual',
+              Text(quote,
                   style: TextStyle(fontSize: 30)),
               SizedBox(height: 50),
-              Text('steve pekerjaan',
+              Text(author,
                   style: TextStyle(fontSize: 20, color: Colors.grey)),
               SizedBox(height: 120),
               Center(
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      getQuote();
+                    });
+                  },
                   color: Colors.black87,
                   minWidth: 20,
                   child: Row(
