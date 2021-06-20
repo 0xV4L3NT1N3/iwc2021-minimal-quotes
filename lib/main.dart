@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.insert_drive_file_rounded, size: 30, color: Colors.black54),
+          leading: Icon(Icons.drive_file_rename_outline, size: 30, color: Colors.black54),
           centerTitle: true,
           title: Text('Minimal Quotes', style: TextStyle(color: Colors.black54)),
           backgroundColor: Colors.grey[50],
