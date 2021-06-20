@@ -5,15 +5,10 @@ import 'dart:convert';
 // quote API used : https://github.com/lukePeavey/quotable
 
 class QuoteAPI {
-  String content = '';
-  String author = '';
-
-  Future<void> getData () async {
+  Future<Map> getData () async {
     Response response = await get(Uri.parse('https://api.quotable.io/random?maxLength=160'));
     Map data = jsonDecode(response.body);
 
-    content = data['content'];
-    author = data['author'];
+    return data;
   }
-
 }

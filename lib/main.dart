@@ -24,10 +24,10 @@ class _MyAppState extends State<MyApp> {
 
   void getQuote () async {
     QuoteAPI newQuote = QuoteAPI();
-    await newQuote.getData();
+    Map data = await newQuote.getData();
     setState(() {
-      quote = newQuote.content;
-      author = newQuote.author;
+      quote = data["content"];
+      author = data["author"];
     });
   }
 
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.drive_file_rename_outline_rounded, size: 30, color: Colors.black54),
+          leading: Icon(Icons.insert_drive_file_rounded, size: 30, color: Colors.black54),
           centerTitle: true,
           title: Text('Minimal Quotes', style: TextStyle(color: Colors.black54)),
           backgroundColor: Colors.grey[50],
