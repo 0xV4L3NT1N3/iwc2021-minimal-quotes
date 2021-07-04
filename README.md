@@ -1,6 +1,6 @@
 # IWC 2021 Minimal Quotes
 
-A simple, fully functional quote library built with [Flutter.](https://flutter.dev/) Powered with ❤️ by the [Quotable APIs.](https://github.com/lukePeavey/quotable)
+A minimal, fully functional quote library built with [Flutter.](https://flutter.dev/) Powered with ❤️ by the [Quotable APIs.](https://github.com/lukePeavey/quotable)
 
 ### Preview 
 
