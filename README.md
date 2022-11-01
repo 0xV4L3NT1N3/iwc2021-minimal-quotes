@@ -1,5 +1,9 @@
 # IWC 2021 Minimal Quotes
 
+> ⚠️ This sample application was built with Flutter 2, breaking changes were introduced with [Flutter 3.](https://medium.com/flutter/introducing-flutter-3-5eb69151622f)
+
+<br>
+
 A minimal, fully functional quote library built with [Flutter.](https://flutter.dev/) Powered with ❤️ by the [Quotable APIs.](https://github.com/lukePeavey/quotable)
 
 ### Preview 
